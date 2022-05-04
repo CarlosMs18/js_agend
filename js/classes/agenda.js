@@ -5,9 +5,14 @@ class Agenda{
     
     addAgenda(newContacto){
         this.lista = [...this.lista, newContacto]
+       
       
     }
+    eliminarContacto(idContact){
+      
+        this.lista = this.lista.filter(l => l.id != idContact)
 
+    }
 
 }
 
