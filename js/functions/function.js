@@ -1,6 +1,9 @@
 import {formularioDatos, nombre ,numero ,  direccion} from '../helpers/selectors.js'
 import ui from '../classes/UI.js'
 import agenda from '../classes/agenda.js'
+
+
+
 export function eventListener(){
     formularioDatos.addEventListener('submit', agregarAgenda)
 }
@@ -15,6 +18,7 @@ function agregarAgenda(e){
     }
 
     const objAgenda = {
+        id : Date.now(),
         nombre  : nombre.value,
         numero : numero.value,
         direccion : direccion.value

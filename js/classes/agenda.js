@@ -5,7 +5,7 @@ class Agenda{
     
     addAgenda(newContacto){
         this.lista = [...this.lista, newContacto]
-        console.log(this.lista)
+      
     }
 
 

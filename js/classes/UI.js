@@ -1,4 +1,4 @@
-import {formularioDatos} from '../helpers/selectors.js'
+import {formularioDatos , listadoTareas} from '../helpers/selectors.js'
 class UI{
     constructor(){}
 
@@ -18,7 +18,28 @@ class UI{
     }
 
     mostrarHTML(lista){
-        console.log(lista)
+        this.limpiarHTML()
+        lista.forEach(list => {
+            const {id, nombre,  direccion, numero} = list
+            listadoTareas.innerHTML += `
+            <div class="tarea">
+            <h3>${nombre}</h3>
+            <p>${numero}</p>
+            <p>${direccion}</p>
+            <span class="material-icons icono eliminar" data-id ='${id}'>
+                delete_forever
+                </span>
+                
+            ` 
+
+        })
+
+    }
+
+    limpiarHTML(){
+        while(listadoTareas.firstChild){
+            listadoTareas.removeChild(listadoTareas.firstChild);
+        }
     }
 }
     
