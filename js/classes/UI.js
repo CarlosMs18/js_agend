@@ -1,7 +1,7 @@
 import {formularioDatos} from '../helpers/selectors.js'
 class UI{
     constructor(){}
-    
+
     mostrarErrores(mensaje){
         const alerta = document.querySelector('.alerta')
         if(!alerta){
@@ -17,8 +17,8 @@ class UI{
         }
     }
 
-    larcita(){
-        console.log('aakaaka')
+    mostrarHTML(lista){
+        console.log(lista)
     }
 }
     
