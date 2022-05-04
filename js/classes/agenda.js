@@ -1,11 +1,12 @@
 class Agenda{
     constructor(){
         this.lista = []
+        this.guardarLocalStorage()
     }
     
     addAgenda(newContacto){
         this.lista = [...this.lista, newContacto]
-       
+        
       
     }
     eliminarContacto(idContact){
@@ -14,6 +15,13 @@ class Agenda{
 
     }
 
+    guardarLocalStorage(){
+        localStorage.setItem('agenda',JSON.stringify(this.lista))
+    }
+
+    leerLocalStorage(){
+        this.lista = JSON.parse(localStorage.getItem('agenda')) || []
+    }
 }
 
 const agenda = new Agenda()

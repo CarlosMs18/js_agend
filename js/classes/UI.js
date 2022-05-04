@@ -1,4 +1,5 @@
 import {formularioDatos , listadoTareas} from '../helpers/selectors.js'
+import agenda from './agenda.js'
 class UI{
     constructor(){}
 
@@ -33,6 +34,8 @@ class UI{
             ` 
 
         })
+
+        agenda.guardarLocalStorage()
 
     }
 

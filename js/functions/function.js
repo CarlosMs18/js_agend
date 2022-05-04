@@ -5,6 +5,7 @@ import agenda from '../classes/agenda.js'
 
 
 export function eventListener(){
+    document.addEventListener('DOMContentLoaded',recargarRecursos)
     formularioDatos.addEventListener('submit', agregarAgenda)
     listadoTareas.addEventListener('click',eliminarContacto)
 }
@@ -26,10 +27,7 @@ function agregarAgenda(e){
     }
     
     agenda.addAgenda(objAgenda)
-
-    nombre.value  = ''
-    numero.value = ''
-    direccion.value = ''
+    formularioDatos.reset()
     
 
     const {lista} = agenda
@@ -44,4 +42,11 @@ function eliminarContacto(e){
         const {lista} = agenda
         ui.mostrarHTML(lista)
     }
+}
+
+
+function recargarRecursos(){
+    
+    
+    ui.mostrarHTML(agenda.lista)
 }
